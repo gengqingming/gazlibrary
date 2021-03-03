@@ -1,9 +1,9 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 let config = {
     mode: 'development',
-    entry: './src/main.ts',
+    entry: './src/main.js',
     output:{
         path:path.resolve(__dirname, "dist"), 
         filename: "gazlibrary.js",
@@ -11,9 +11,7 @@ let config = {
     },
     devtool: 'inline-source-map',
     module: {
-        rules: [
-            { test: /\.ts?$/, loader: "ts-loader" }
-        ]
+        rules: []
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -27,7 +25,7 @@ let config = {
         contentBase: './dist',
         
     },
-}
+};
 
 
 module.exports = config;
